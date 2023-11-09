@@ -7,7 +7,8 @@ class Course:
     def __init__(self, crn: str, term: str):
         self.crn = crn
         self.term = term # default
-        url = 'https://oscar.gatech.edu/bprod/bwckschd.p_disp_detail_sched?term_in='
+        #below relies on data from: https://bannerssb.utk.edu/kbanpr/bwckschd.p_disp_dyn_sched
+        url = 'https://bannerssb.utk.edu/kbanpr/bwckschd.p_disp_detail_sched?term_in='
         url += self.term + '&crn_in=' + self.crn
         with requests.Session() as s:
             with s.get(url) as page:
@@ -16,7 +17,7 @@ class Course:
                 self.name = headers[0].getText()
 
     def __get_prereqs(self):
-        url = 'https://oscar.gatech.edu/bprod/bwckschd.p_disp_detail_sched?term_in='
+        url = 'https://bannerssb.utk.edu/kbanpr/bwckschd.p_disp_detail_sched?term_in='
         url += self.term + '&crn_in=' + self.crn
 
         with requests.Session() as s:
@@ -48,7 +49,7 @@ class Course:
         return self.name != None
     
     def __get_registration_info(self, term: str):
-        url = 'https://oscar.gatech.edu/bprod/bwckschd.p_disp_detail_sched?term_in='
+        url = 'https://bannerssb.utk.edu/kbanpr/bwckschd.p_disp_detail_sched?term_in='
         url += term + '&crn_in=' + self.crn
 
         with requests.Session() as s:
