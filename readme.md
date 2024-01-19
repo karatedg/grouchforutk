@@ -2,9 +2,9 @@
 
 ## About
 
-A registration aid for students at UTK. Forked from JIceberg's grouch for Georgia Tech (https://github.com/JIceberg/grouch) and 99% of what is here belongs to them (including most of the readme). I just swapped out the URL for one that works with UTK's model.
+A registration aid for students at UTK based JIceberg's grouch for Georgia Tech. I just swapped out the url for one that works with UTK's system.
 
-I also added support for a discord webhook to send you notifications wherever you are. It is definitely not the best way, but it was the way I knew when I was doing this.
+I also "added" (more like forced in) support for a discord webhook to send you notifications that way, if that is something you are interested in.
 
 ## Installation
 
